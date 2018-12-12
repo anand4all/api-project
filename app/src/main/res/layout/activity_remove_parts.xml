@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Remove_parts"
+    android:background="@color/gen_white"
+    android:weightSum="10"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+
+        android:layout_weight="2"
+
+
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/search_bar_remove"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/search_bar_remove"
+            android:backgroundTint="#20000000"
+            android:hint="Search to remove"
+
+            android:padding="7dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+        <me.dm7.barcodescanner.zxing.ZXingScannerView
+            android:id="@+id/zxscan_remove"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+    <!--   <com.miguelcatalan.materialsearchview.MaterialSearchView
+           android:id="@+id/search_view1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"  />
+          app:searchSuggestionBackground="#f2563e"
+           app:searchBackground="#f2563e"
+           app:searchBackIcon="@drawable/ic_arrow_back_black_24dp"
+           app:searchSuggestionIcon="@drawable/ic_info_outline_black_24dp"
+           android:textColor="#ffffff"
+           android:textColorHint="#ffffff"-->
+
+    <LinearLayout android:id="@+id/layout_address_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:layout_weight="2"
+        android:elevation="30sp">
+        <Button android:id="@+id/ok_btn_remove"
+
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/bg_screen1"
+            android:text="OK"
+            android:textSize="14sp"
+            android:textColor="@color/gen_white"
+            android:textStyle="bold"
+
+            android:fontFamily="sans-serif"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".searchh_result_parts"
+    android:background="@color/gen_white"
+    android:orientation="vertical">
+   <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+       android:background="@color/orange_light"
+        >
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/listshow"
+
+        android:scrollbars="vertical"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/noresult_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/noresultfound"
+        />
+
+
+<!--   <com.miguelcatalan.materialsearchview.MaterialSearchView
+       android:id="@+id/search_view1"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"  />
+      app:searchSuggestionBackground="#f2563e"
+       app:searchBackground="#f2563e"
+       app:searchBackIcon="@drawable/ic_arrow_back_black_24dp"
+       app:searchSuggestionIcon="@drawable/ic_info_outline_black_24dp"
+       android:textColor="#ffffff"
+       android:textColorHint="#ffffff"-->
+
+
+</LinearLayout>

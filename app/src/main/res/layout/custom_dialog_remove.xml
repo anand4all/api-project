@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@color/gen_white"
+    android:orientation="vertical"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@+id/layout_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="1.01"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Part1"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:background="#C0C0C0"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="13dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/orange_light"
+                android:textSize="15dp"
+                android:layout_marginLeft="3dp"
+                android:padding="8dp"
+                android:text="Quantity :"/>
+            <ImageView
+                android:id="@+id/items_quantity_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/ic_remove_circle_outline_green_24dp"
+                android:paddingRight="10dp"/>
+            <TextView
+                android:id="@+id/item_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="1"/>
+
+            <ImageView
+                android:id="@+id/items_quantity_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="2dp"
+                android:src="@drawable/ic_add_circle_outline_black_24dp" />
+
+
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:hint="Reason......."
+            android:gravity="top"
+            android:padding="5dp"
+            android:background="@drawable/shape_reason_dialog"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/layout_address_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:elevation="30sp">
+        <TextView android:id="@+id/txt_cancel_dialog"
+            android:layout_width="0sp"
+            android:layout_marginRight="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/orange_light"
+            android:text="CANCEL"
+            android:textSize="14sp"
+
+            android:textColor="@color/gen_white"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <Button android:id="@+id/btn_remove_dialog"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/bg_screen1"
+            android:text="Remove"
+            android:textSize="14sp"
+            android:textColor="@color/gen_white"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+</LinearLayout>

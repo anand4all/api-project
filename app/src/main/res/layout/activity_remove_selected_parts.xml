@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="4dp"
+    tools:context=".remove_selected_parts"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@+id/layout_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="1.01"
+        android:orientation="vertical">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvs_partsshow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/layout_address_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:elevation="30sp"
+
+        >
+
+        <TextView android:id="@+id/skip_btn"
+            android:layout_width="0sp"
+            android:layout_marginRight="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/orange_light"
+            android:text="Skip"
+            android:textSize="14sp"
+
+            android:textColor="@color/gen_white"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <Button android:id="@+id/ok_btn_remove_selected"
+            android:layout_marginLeft="2dp"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/bg_screen1"
+            android:text="OK"
+            android:textSize="14sp"
+            android:textColor="@color/gen_white"
+            android:textStyle="bold"
+
+            android:fontFamily="sans-serif"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+</LinearLayout>

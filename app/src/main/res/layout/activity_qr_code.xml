@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan bar code "
+        android:layout_marginTop="8dp"
+        android:textColor="@color/bg_screen1"
+        android:gravity="center"
+        android:textSize="25dp"/>
+
+    <SurfaceView
+        android:layout_marginTop="50dp"
+        android:id="@+id/camerapreview"
+        android:layout_width="match_parent"
+        android:layout_height="550px" />
+
+    <EditText
+        android:id="@+id/txtResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/camerapreview"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/orange_light"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        android:hint="Enter serial number"
+        android:textSize="20dp" />
+    <LinearLayout
+        android:layout_below="@+id/txtResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_remove_circle_outline_green_24dp"
+            android:paddingRight="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_add_circle_outline_black_24dp"/>
+
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/orange_light"
+        android:gravity="center"
+        android:text="Add"
+        android:textColor="@color/gen_white"
+        android:textSize="20dp" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_grn"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="8dp"
+
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/companyname_grn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_assignment_black_24dp"
+            android:textSize="19dp"
+
+
+            android:text="serial_number"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        <View
+            android:layout_below="@+id/companyname_grn"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
+        <TextView
+            android:id="@+id/servicename"
+            android:layout_below="@+id/companyname_grn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_company_black_24dp"
+            android:layout_margin="8dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="serial_number"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+           android:id="@+id/mobile"
+           android:layout_below="@+id/servicename"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_local_phone_black_24dp"
+           android:layout_margin="8dp"
+           android:textSize="15dp"
+           android:text="serial_number"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+       <TextView
+           android:id="@+id/date"
+           android:layout_below="@+id/mobile"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="8dp"
+           android:drawableLeft="@drawable/ic_date_range_black_24dp"
+           android:text="serial_number"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+       <TextView
+           android:id="@+id/status"
+           android:layout_below="@+id/date"
+           android:drawableLeft="@drawable/ic_chat_bubble_outline_black_24dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="8dp"
+           android:text="serial_number"
+           android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
