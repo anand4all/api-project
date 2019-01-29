@@ -19,6 +19,25 @@ public class Item {
     public String customs_no;
     public String sheet;
 
+    public String getTotalquantity() {
+        return totalquantity;
+    }
+
+    public void setTotalquantity(String totalquantity) {
+        this.totalquantity = totalquantity;
+    }
+
+    public String totalquantity;
+    public String getBarcode() {
+        return Barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        Barcode = barcode;
+    }
+
+    public String Barcode;
+
 
 
 
@@ -37,6 +56,8 @@ public class Item {
         this.customs_no = object.getString("customs_no");
         this.sheet = object.getString("sheet");
         this.created = object.getString("created");
+        this.Barcode = object.getString("bar_code");
+        this.totalquantity = object.getString("total_quantity");
       /*this.part_no = object.getString("name");
         this.description_1 = object.getString("password");
         this.description_2 = object.getString("contact");

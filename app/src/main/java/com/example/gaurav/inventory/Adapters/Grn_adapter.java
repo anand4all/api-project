@@ -14,6 +14,7 @@ import com.example.gaurav.inventory.Add_parts;
 import com.example.gaurav.inventory.Grn_project_details;
 import com.example.gaurav.inventory.R;
 import com.example.gaurav.inventory.entities.Grn_item;
+import com.example.gaurav.inventory.entities.Item;
 
 import java.util.ArrayList;
 
@@ -50,6 +51,20 @@ public class Grn_adapter extends RecyclerView.Adapter<Grn_adapter.Holderview>{
             }
         });
 
+    }
+
+    public void setfilter(ArrayList<Grn_item>listitem)
+    {
+
+       /* if(listitem==null)
+        {
+            imageView.setVisibility(View.VISIBLE);
+            notifyDataSetChanged();
+
+        }*/
+        Grnlist = new ArrayList<>();
+        Grnlist.addAll(listitem);
+        notifyDataSetChanged();
     }
 
     @Override

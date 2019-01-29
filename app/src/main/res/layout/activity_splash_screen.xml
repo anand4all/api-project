@@ -14,13 +14,14 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="210dp"
-        android:layout_marginRight="22dp"
-        android:src="@drawable/cart" />
+        android:src="@drawable/brudererlogo"
 
-    <ImageView
+    />
+
+  <!--  <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/inventory_mangementname" />
+        android:src="@drawable/inventory_mangementname" /> -->
 
 
 </LinearLayout>

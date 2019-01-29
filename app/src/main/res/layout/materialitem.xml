@@ -1,6 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    app:cardUseCompatPadding="true">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/titlemat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="serial_number"
+            android:textStyle="bold"
+            android:textSize="18dp"
+
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        <View
+            android:layout_below="@+id/titlemat"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#4682b4"/>
+        <TextView
+            android:layout_below="@+id/titlemat"
+            android:id="@+id/comm_nr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="title"
+            android:textSize="15dp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        <TextView
+            android:layout_below="@+id/comm_nr"
+            android:id="@+id/usermat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="title"
+            android:textSize="15dp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <LinearLayout
+
+            android:layout_below="@id/usermat"
+            android:id="@+id/layoutdoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="15dp"
+
+                android:text="Date of Issue :"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+
+                android:layout_below="@+id/qty"
+                android:id="@+id/dateofissue"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"
+                android:text="custom_no"
+                android:maxLength="10"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+        </LinearLayout>
+
+
+            <TextView
+                android:layout_below="@+id/layoutdoi"
+                android:id="@+id/partno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="title"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:layout_below="@+id/partno"
+                android:id="@+id/pricemat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="price"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+            <TextView
+                android:layout_below="@+id/pricemat"
+                android:id="@+id/qty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="15dp"
+
+                android:text="weight"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

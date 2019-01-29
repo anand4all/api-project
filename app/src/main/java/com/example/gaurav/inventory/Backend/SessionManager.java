@@ -1,7 +1,10 @@
 package com.example.gaurav.inventory.Backend;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+
+import com.example.gaurav.inventory.Login;
 
 public class SessionManager {
     Context context;
@@ -68,5 +71,43 @@ public class SessionManager {
         spe = sp.edit();
         spe.clear();
         spe.apply();
+    }
+
+    public void logoutUser(){
+
+        // Clearing all user data from Shared Preferences
+        spe.clear();
+        spe.commit();
+
+        // After logout redirect user to Login Activity
+        Intent i = new Intent(context, Login.class);
+
+        // Closing all the Activities
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        // Add new Flag to start new Activity
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        // Staring Login Activity
+        context.startActivity(i);
+    }
+
+    public void checklogin() {
+        // Check login status
+        if (getUsername().equals("")) {
+            // user is not logged in redirect him to Login Activity
+            Intent i = new Intent(context, Login.class);
+
+            // Closing all the Activities
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            // Add new Flag to start new Activity
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            // Staring Login Activity
+            context.startActivity(i);
+
+        }
+
     }
 }

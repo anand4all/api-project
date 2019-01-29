@@ -13,7 +13,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp">
+
         <TextView
+            android:id="@+id/grn_description1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="17dp"
+            android:text="serial_number"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        <View
+            android:layout_below="@id/grn_description1"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#4682b4"/>
+        <TextView
+            android:layout_below="@+id/grn_description1"
             android:id="@+id/grn_parts_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,16 +39,79 @@
             android:text="serial_number"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
+
         <TextView
-            android:layout_below="@+id/grn_parts_detail"
-            android:id="@+id/qty_grndetail"
+            android:id="@+id/grn_barcode"
+            android:layout_below="@id/grn_parts_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:textSize="15dp"
+            android:textSize="16dp"
 
-            android:text="Quantity : 0"
+            android:text="serial_number"
             android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        <LinearLayout
+            android:id="@+id/qtylayout"
+            android:layout_below="@id/grn_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="15dp"
+
+                android:text="Quantity :"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:layout_below="@+id/grn_description1"
+                android:id="@+id/qty_grndetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="14dp"
+
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/qtylayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="15dp"
+
+                android:text="Price :"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:layout_below="@+id/grn_description1"
+                android:id="@+id/price_grn_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="14dp"
+
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        </LinearLayout>
+
+
 
 
 

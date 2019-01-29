@@ -44,6 +44,7 @@ public class search_parts_adapter extends RecyclerView.Adapter<search_parts_adap
         holder.price.setText("Price : "+item.getPrice());
         holder.weight.setText("Weight : "+item.getWeight());
         holder.custom_no.setText("Custom No : "+item.getCustoms_no());
+        holder.total_quant.setText("Total Quantity : "+item.getTotalquantity());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override            public void onClick(View view) {
 
@@ -55,7 +56,6 @@ public class search_parts_adapter extends RecyclerView.Adapter<search_parts_adap
     }
     public void setfilter(ArrayList<Item>listitem)
     {
-
        /* if(listitem==null)
         {
             imageView.setVisibility(View.VISIBLE);
@@ -74,7 +74,7 @@ public class search_parts_adapter extends RecyclerView.Adapter<search_parts_adap
     {
        // ImageView imageView;
 
-        TextView v_name,product_detail,price,weight,custom_no;
+        TextView v_name,product_detail,price,weight,custom_no,total_quant;
         Holderview(View itemview)
         {
             super(itemview);
@@ -84,6 +84,7 @@ public class search_parts_adapter extends RecyclerView.Adapter<search_parts_adap
             price = (TextView) itemView.findViewById(R.id.price);
             weight = (TextView) itemView.findViewById(R.id.weight);
             custom_no = (TextView) itemView.findViewById(R.id.custom_no);
+            total_quant = (TextView) itemView.findViewById(R.id.mastersheetquantity);
             //imageView=itemView.findViewById(R.id.noresult_img);
         }
     }

@@ -35,12 +35,15 @@ public class Grn_detail_adapter extends RecyclerView.Adapter<Grn_detail_adapter.
     @Override
     public void onBindViewHolder(@NonNull Grn_detail_adapter.Holderview holder, final int position) {
        // Grn_item_detail grn_item_detail=Grnlist.get(position);
-        holder.v_name.setText(Grnlist.get(position).getTitle());
-        holder.mobile.setText(Grnlist.get(position).getMobile());
+        holder.part_no.setText(Grnlist.get(position).getPartno());
+        holder.qty.setText(Grnlist.get(position).getQty());
+        holder.barcode.setText(Grnlist.get(position).getBarcode());
+        holder.description.setText(Grnlist.get(position).getDescription1());
+        holder.price.setText(Grnlist.get(position).getPrice());
        // holder.v_name.setText("Project Name : "+grn_item_detail.getTitle()+"\n\n"+"Date : "+grn_item_detail.getMobile());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override            public void onClick(View view) {
-                Toast.makeText(context, "click on " + Grnlist.get(position).getTitle(),
+                Toast.makeText(context, "click on " + Grnlist.get(position).getPartno(),
                         Toast.LENGTH_SHORT).show();
               //  context.startActivity(new Intent(context, Grn_project_details.class));
 
@@ -58,13 +61,17 @@ public class Grn_detail_adapter extends RecyclerView.Adapter<Grn_detail_adapter.
     class Holderview extends RecyclerView.ViewHolder
     {
 
-        TextView v_name,mobile;
+        TextView part_no,qty,barcode,description,price;
         Holderview(View itemview)
         {
             super(itemview);
 
-            v_name = (TextView) itemView.findViewById(R.id.grn_parts_detail);
-            mobile = (TextView) itemView.findViewById(R.id.qty_grndetail);
+            barcode = (TextView) itemView.findViewById(R.id.grn_barcode);
+            description = (TextView) itemView.findViewById(R.id.grn_description1);
+
+            part_no = (TextView) itemView.findViewById(R.id.grn_parts_detail);
+            qty = (TextView) itemView.findViewById(R.id.qty_grndetail);
+            price = (TextView) itemView.findViewById(R.id.price_grn_detail);
         }
     }
 }

@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Inventory</string>
+    <string name="app_name">Bruderer</string>
     <string name="result_txt_default">Please focus camera to QR code</string>
 </resources>

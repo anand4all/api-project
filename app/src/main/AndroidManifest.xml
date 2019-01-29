@@ -3,6 +3,7 @@
     package="com.example.gaurav.inventory">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,21 +20,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".startup.MainActivity" />
-        <activity android:name=".QR_code" />
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
 
-        <activity android:name=".searchh_result_parts" />
-        <activity android:name=".Grn" />
-        <activity android:name=".Remove_parts" />
+        <activity
+            android:name=".searchh_result_parts"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Grn"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Remove_parts"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Add_parts" />
         <activity
             android:name=".Grn_project_details"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".remove_selected_parts" />
-        >
         <activity android:name=".startup.Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +48,9 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".Registration" />
+        <activity android:name=".Materialissue" />
+        <activity android:name=".stockcheck" />
+        <activity android:name=".material"></activity>
     </application>
 
 </manifest>

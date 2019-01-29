@@ -10,25 +10,11 @@
     tools:context=".Grn_project_details">
 
 
-
-
-
         <me.dm7.barcodescanner.zxing.ZXingScannerView
             android:id="@+id/zxscangrn"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             />
-     <!--   <Button
-            android:layout_gravity="center"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Scan"
-            android:textColor="@color/gen_white"
-            android:backgroundTint="@color/orange_light"
-
-            android:background="@drawable/shapescanbtn"
-            /> -->
-
 
     <LinearLayout
         android:id="@+id/layout_editext"
@@ -39,9 +25,8 @@
         android:layout_marginTop="2dp"
         android:elevation="20dp"
         android:orientation="horizontal">
-        <EditText
+      <!--  <EditText
             android:layout_weight="1"
-
             android:id="@+id/txt_project_serialno"
             android:layout_below="@+id/Zzinglayout"
             android:layout_width="match_parent"
@@ -50,9 +35,18 @@
             android:backgroundTint="@color/orange_light"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="15dp"
-
             android:hint="Enter serial number"
-            android:textSize="20dp" />
+            android:textSize="20dp" /> -->
+        <AutoCompleteTextView
+            android:id="@+id/autocompleteedit"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:hint="Enter serial number"
+            android:backgroundTint="#4169e1"
+            />
 
         <TextView
             android:id="@+id/add_parttxt"
@@ -61,10 +55,11 @@
             android:layout_marginRight="10dp"
             android:layout_weight="3"
             android:background="@drawable/shapescanbtn"
-            android:backgroundTint="@color/orange_light"
+            android:backgroundTint="#4682b4"
             android:gravity="center"
             android:paddingRight="1dp"
             android:text="Add"
+            android:elevation="20dp"
             android:textColor="@color/gen_white"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
@@ -146,7 +141,7 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/bg_screen1"
+        android:background="#4682b4"
         android:gravity="center"
         android:text="Save"
         android:textColor="@color/gen_white"

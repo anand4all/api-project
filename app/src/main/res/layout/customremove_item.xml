@@ -6,48 +6,135 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:cardCornerRadius="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="6dp"
     app:cardUseCompatPadding="true">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="5dp">
-
-    <TextView
-        android:id="@+id/productrv_id"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="serial_number"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-    <TextView
-        android:layout_below="@+id/productrv_id"
-        android:id="@+id/productrv_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="title"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:padding="5dp">
 
-    <TextView
-        android:layout_below="@+id/productrv_detail"
-        android:id="@+id/productrv_Qty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        <TextView
+            android:id="@+id/inventory_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="17dp"
+            android:text="serial_number"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        <View
+            android:layout_below="@id/inventory_rv"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#4682b4"/>
+        <TextView
+            android:layout_below="@+id/inventory_rv"
+            android:id="@+id/inventory_partno_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="16dp"
 
-        android:text="Qty:1"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-    <TextView
+            android:text="serial_number"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        android:layout_below="@+id/productrv_Qty"
-        android:id="@+id/rvRack"
-        android:drawableLeft="@drawable/ic_location_on_black_24dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
 
-        android:text="Rack"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
-</RelativeLayout>
-    </android.support.v7.widget.CardView>
+
+
+        <LinearLayout
+            android:id="@+id/inventory_weightlayout"
+            android:layout_below="@id/inventory_partno_rv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="15dp"
+
+                android:text="Weight :"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            <TextView
+                android:id="@+id/inventory_barcode_rv"
+                android:layout_below="@id/inventory_partno_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="16dp"
+
+                android:text="serial_number"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/inventory_qtylayout"
+            android:layout_below="@id/inventory_weightlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="15dp"
+
+                android:text="Quantity :"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:layout_below="@+id/grn_description1"
+                android:id="@+id/inventory_qty_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="14dp"
+
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/inventory_qtylayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="15dp"
+
+                android:text="Price :"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:layout_below="@+id/grn_description1"
+                android:id="@+id/inventory_price_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="14dp"
+
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

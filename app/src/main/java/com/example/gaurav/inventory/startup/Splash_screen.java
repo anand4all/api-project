@@ -61,6 +61,8 @@ public class Splash_screen extends AppCompatActivity implements Animation.Animat
     public void onAnimationEnd(Animation animation) {
         // Start Main Screen
         Intent i = new Intent(Splash_screen.this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         startActivity(i);
         this.finish();
     }

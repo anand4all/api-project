@@ -4,13 +4,18 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.Camera;
 import android.os.Vibrator;
 import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,12 +31,18 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import static android.media.MediaRecorder.VideoSource.CAMERA;
 
 public class Add_parts extends AppCompatActivity implements ZXingScannerView.ResultHandler{
+    private Context context;
     private ZXingScannerView zXingScannerView;
     EditText txtResult;
-    ImageView itemsQuantityAdd, itemsQuantityRemove;
+    ImageView itemsQuantityAdd, itemsQuantityRemove,scan;
     TextView itemquantity,additem;
 
+    FloatingActionButton fab;
+
     int count=1;
+    private Camera camera;
+    Camera.Parameters params;
+    public boolean isFlashOn;
 
 
     @Override
@@ -39,16 +50,33 @@ public class Add_parts extends AppCompatActivity implements ZXingScannerView.Res
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_parts);
 
+        Window window = this.getWindow();
+
+// clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.status));
+
+
+        // fab=findViewById(R.id.flash);
+
         itemquantity=(TextView)findViewById(R.id.item_quantity_addpart);
         itemsQuantityAdd=findViewById(R.id.items_quantity_add_addpart);
         itemsQuantityRemove=findViewById(R.id.items_quantity_remove_addpart);
         txtResult=findViewById(R.id.txtResult);
         additem=findViewById(R.id.add_addpart);
 
+        // scan=findViewById(R.id.scan);
+
+        //scan.setVisibility(View.GONE);
+
         askForPermission(Manifest.permission.CAMERA, CAMERA);
         zXingScannerView = new ZXingScannerView(this);
-
-        zXingScannerView= (ZXingScannerView) findViewById(R.id.zxscan);
+        zXingScannerView = (ZXingScannerView) findViewById(R.id.zxscan);
         zXingScannerView.setResultHandler(this);
         zXingScannerView.startCamera();
 
@@ -61,8 +89,6 @@ public class Add_parts extends AppCompatActivity implements ZXingScannerView.Res
             }
         });
 
-
-
     }
 
     private void askForPermission(String permission, Integer requestCode) {
@@ -73,7 +99,7 @@ public class Add_parts extends AppCompatActivity implements ZXingScannerView.Res
                 //request for permissions and getting request code -- 5 for camera
                 ActivityCompat.requestPermissions(Add_parts.this, new String[]{permission}, requestCode);
 
-            } else {
+            } else  {
                 //requesting permission
                 ActivityCompat.requestPermissions(Add_parts.this, new String[]{permission}, requestCode);
             }
@@ -166,8 +192,75 @@ public class Add_parts extends AppCompatActivity implements ZXingScannerView.Res
 
     }
 
+/*    private boolean hasFlash() {
+        return getApplicationContext().getPackageManager()
+                .hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+    }
+
+   public void flash(){
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isFlashOn) {
+                    // turn off flash
+                    turnOffFlash();
+                } else {
+                    // turn on flash
+                    turnOnFlash();
+                }
+
+            }
+        });
 
 
+
+   }
+
+    private void turnOnFlash() {
+        if (!isFlashOn) {
+            if (camera == null || params == null) {
+                return;
+            }
+            // play sound
+
+            params = camera.getParameters();
+            params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+            camera.setParameters(params);
+            camera.startPreview();
+            isFlashOn = true;
+
+            // changing button/switch image
+        }
+
+    }
+    private void turnOffFlash() {
+        if (isFlashOn) {
+            if (camera == null || params == null) {
+                return;
+            }
+            // play sound
+
+            params = camera.getParameters();
+            params.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+            camera.setParameters(params);
+            camera.stopPreview();
+            isFlashOn = false;
+
+            // changing button/switch image
+
+        }
+    }
+    private void getCamera() {
+        if (camera == null) {
+            try {
+                camera = Camera.open();
+                params = camera.getParameters();
+            } catch (RuntimeException e) {
+                Log.e("Camera Error ", e.getMessage());
+            }
+        }
+    } */
 
 }
 

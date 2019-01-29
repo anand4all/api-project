@@ -4,6 +4,19 @@
     android:layout_height="match_parent"
     android:background="@color/gen_white"
     android:orientation="vertical">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <!--   <android.support.design.widget.FloatingActionButton
+            android:id="@+id/flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="10dp" /> -->
+    </android.support.design.widget.CoordinatorLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,6 +26,7 @@
             android:id="@+id/zxscan"
             android:layout_width="match_parent"
             android:layout_height="380dp" />
+
 
     </LinearLayout>
 
@@ -32,7 +46,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="35dp"
-            android:backgroundTint="@color/orange_light"
+            android:backgroundTint="#4682b4"
             android:hint="Enter serial number"
             android:textSize="20dp" />
 
@@ -41,7 +55,7 @@
             android:layout_below="@+id/txtResult"
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="@color/orange_light"/>
+            android:background="#4682b4"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,7 +120,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="0dp"
-                android:background="@color/orange_light"
+                android:background="#4682b4"
                 android:gravity="center"
                 android:text="Add"
                 android:textColor="@color/gen_white"

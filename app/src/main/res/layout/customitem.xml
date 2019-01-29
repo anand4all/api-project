@@ -19,7 +19,7 @@
             android:id="@+id/product_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="6dp"
             android:text="serial_number"
             android:textStyle="bold"
             android:textSize="18dp"
@@ -29,15 +29,15 @@
             android:layout_below="@+id/product_id"
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="#c0c0c0"/>
+            android:background="#4682b4"/>
        <TextView
             android:layout_below="@+id/product_id"
             android:id="@+id/product_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="5dp"
             android:text="title"
-            android:textSize="17dp"
+            android:textSize="15dp"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -45,9 +45,9 @@
             android:id="@+id/price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="5dp"
             android:text="price"
-            android:textSize="17dp"
+            android:textSize="15dp"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
@@ -56,8 +56,8 @@
             android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:textSize="17dp"
+            android:layout_margin="5dp"
+            android:textSize="15dp"
 
             android:text="weight"
             android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -68,9 +68,20 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:textSize="17dp"
+            android:layout_margin="5dp"
+            android:textSize="15dp"
             android:text="custom_no"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+        <TextView
+
+            android:layout_below="@+id/custom_no"
+            android:id="@+id/mastersheetquantity"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="15dp"
+            android:text="quantity"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
     </RelativeLayout>
 </android.support.v7.widget.CardView>

@@ -33,7 +33,7 @@
             android:layout_below="@+id/companyname_grn"
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="#c0c0c0"/>
+            android:background="#4682b4"/>
         <TextView
             android:id="@+id/servicename"
             android:layout_below="@+id/companyname_grn"
