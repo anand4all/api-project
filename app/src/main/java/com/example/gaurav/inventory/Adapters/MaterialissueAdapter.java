@@ -24,7 +24,7 @@ public class MaterialissueAdapter extends ExpandableRecyclerAdapter<TitleParentV
         super(context, parentItemList);
         inflater = LayoutInflater.from(context);
     }
-
+    
     @Override
     public TitleParentViewHolder onCreateParentViewHolder(ViewGroup viewGroup) {
         View view = inflater.inflate(R.layout.list_parent,viewGroup,false);

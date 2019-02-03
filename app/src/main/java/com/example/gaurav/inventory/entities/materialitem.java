@@ -3,6 +3,8 @@ package com.example.gaurav.inventory.entities;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class materialitem {
     public String titlemat;
     public String qtymat;
@@ -28,10 +30,11 @@ public class materialitem {
     public String dateofisuue;
 
 
+    ArrayList<materialissueitem> materialissueitems;
 
-    JSONObject object;
 
-    public materialitem(JSONObject object) throws JSONException {
+  //  JSONObject object;
+    /*public materialitem(JSONObject object) throws JSONException {
         this.object = object;
        // this.pk = object.getString("pk");
         this.titlemat = object.getString("title");
@@ -41,6 +44,18 @@ public class materialitem {
         this.usernam=object.getString("user");
         this.dateofisuue=object.getString("date");
         this.comm_nr=object.getString("comm_nr");
+    }*/
+
+    public materialitem(String titlemat,  String comm_nr, String dateofisuue, ArrayList<materialissueitem> materialissueitems, String usernam) {
+        this.titlemat = titlemat;
+       // this.qtymat = qtymat;
+        this.comm_nr = comm_nr;
+        this.dateofisuue = dateofisuue;
+        this.materialissueitems = materialissueitems;
+      //  this.object = object;
+      //  this.pricemat = pricemat;
+    //    this.partno = partno;
+        this.usernam = usernam;
     }
 
     public String getTitlemat() {
@@ -85,6 +100,15 @@ public class materialitem {
 
     public String pricemat;
     public String partno;
+
+    public ArrayList<materialissueitem> getMaterialissueitems() {
+        return materialissueitems;
+    }
+
+    public void setMaterialissueitems(ArrayList<materialissueitem> materialissueitems) {
+        this.materialissueitems = materialissueitems;
+    }
+
     public String usernam;
 
 }

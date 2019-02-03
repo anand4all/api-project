@@ -110,14 +110,14 @@
         <me.dm7.barcodescanner.zxing.ZXingScannerView
             android:id="@+id/zscanstock_check"
             android:layout_width="match_parent"
-            android:layout_marginBottom="45dp"
+
 
             android:layout_height="match_parent"
             />
 
 
 
-       <Button android:id="@+id/downloadbtn"
+      <!-- <Button android:id="@+id/downloadbtn"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -130,7 +130,7 @@
 
 
             android:fontFamily="sans-serif"
-            android:gravity="center"/>
+            android:gravity="center"/> -->
 
     </RelativeLayout>
   <!--  <LinearLayout android:id="@+id/layout_address_payment"

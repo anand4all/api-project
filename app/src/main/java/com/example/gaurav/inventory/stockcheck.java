@@ -127,7 +127,7 @@ public class stockcheck extends AppCompatActivity implements ZXingScannerView.Re
         window.setStatusBarColor(ContextCompat.getColor(this,R.color.status));
         productlists1=new ArrayList<>();
         auto_stockcheck=findViewById(R.id.autocomplete_stockcheck);
-        downloadstocksheet=findViewById(R.id.downloadbtn);
+   //     downloadstocksheet=findViewById(R.id.downloadbtn);
 
         searchstock=findViewById(R.id.searchstock);
         stockchecklist=new ArrayList<>();
@@ -233,7 +233,7 @@ public class stockcheck extends AppCompatActivity implements ZXingScannerView.Re
             }
         });
 
-        downloadstocksheet.setOnClickListener(new View.OnClickListener() {
+      /*  downloadstocksheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String text="gjoegohoeggprhoepghpghprghegprhpghrephprghiegphirepghprogogphoreghopeghopeprgho";
@@ -245,7 +245,7 @@ public class stockcheck extends AppCompatActivity implements ZXingScannerView.Re
               //     MyCustomAlertDialog2();
               //   new LongOperation().execute();
 
-          /*     try {
+               try {
                     String extStorageDirectory = Environment.getExternalStorageDirectory()
                             .toString();
                     File folder = new File(extStorageDirectory, "pdf");
@@ -261,10 +261,10 @@ public class stockcheck extends AppCompatActivity implements ZXingScannerView.Re
                     showPdf();
 
                 }
-                catch (Exception e){} */
+                catch (Exception e){}
 
             }
-        });
+        });   */
 
     }
 

@@ -2,6 +2,7 @@ package com.example.gaurav.inventory;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,6 +29,7 @@ import com.example.gaurav.inventory.Adapters.materialadapter;
 import com.example.gaurav.inventory.Backend.Backendserver;
 import com.example.gaurav.inventory.entities.Grn_item;
 import com.example.gaurav.inventory.entities.arraymatitem;
+import com.example.gaurav.inventory.entities.materialissueitem;
 import com.example.gaurav.inventory.entities.materialitem;
 import com.example.gaurav.inventory.model.TitleCreator;
 import com.example.gaurav.inventory.model.TitleParent;
@@ -69,6 +73,18 @@ public class Materialissue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materialissue);
+
+
+        Window window = this.getWindow();
+
+// clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.status));
 
         toolbar = (Toolbar) findViewById(R.id.toolbarmi);
         setSupportActionBar(toolbar);
@@ -209,73 +225,94 @@ public class Materialissue extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 super.onSuccess(statusCode, headers, response);
+
+                materiallist.clear();
+
                 alertDialog.dismiss();
+
+                List<materialitem> newsfeedList=new ArrayList<>();
+                newsfeedList.clear();
 
                 for (int i = 0; i < response.length(); i++) {
 
-                    JSONObject object=null;
+                    JSONObject object1=null;
 
+                    materialitem materialitem1=null;
                     try {
-                        object = response.getJSONObject(i);
-                        JSONObject project=object.getJSONObject("project");
+                        object1 = response.getJSONObject(i);
+                        JSONObject project=object1.getJSONObject("project");
                         String title = project.getString("title");
-                        object.put("title",title);
-                        JSONObject user=object.getJSONObject("user");
+                        //materialitem1.a("title",title);
+                        JSONObject user=object1.getJSONObject("user");
                         String user1 = user.getString("first_name");
-                        object.put("user",user1);
+                       // object.put("user",user1);
 
-                        JSONArray schedule_Array = object.getJSONArray("materialIssue");
+
+                        String dateofissue = project.getString("created");
+                       // object.put("date",dateofissue);
+                        String comm_nr = project.getString("comm_nr");
+                      //  object.put("comm_nr",comm_nr);
+
+                        JSONArray schedule_Array = object1.getJSONArray("materialIssue");
+
+
+                        ArrayList<materialissueitem> materialissueitems= new ArrayList<>();
+                      //  List<materialissueitem> materialissueitems2=new ArrayList<>();
+
+                        materialissueitems.clear();
+                     //   materialissueitems2.clear();
+                        materialissueitem  materialissueitem1=null;
+
                         for (int j=0;j<schedule_Array.length();j++)
                         {
+
+
                             JSONObject jOBJNEW = schedule_Array.getJSONObject(j);
 
                             String qty=jOBJNEW.getString("qty");
                             String price=jOBJNEW.getString("price");
 
-                            object.put("qty",qty);
-                         //   jOBJNEW.put("qty",qty);
-                            object.put("price",price);
 
                             JSONObject product = jOBJNEW.getJSONObject("product");
                             String part_no=product.getString("part_no");
-                            object.put("part_no",part_no);
-                          //  jOBJNEW.put("part_no",part_no);
-                          //   matlarraylist.add(new arraymatitem(jOBJNEW));
 
-                          //  Log.e("errror"," "+jOBJNEW);
+                            materialissueitem1 =new materialissueitem(""+part_no,""+qty,""+price);
 
-                          // Toast.makeText(getApplicationContext(),"res "+jOBJNEW.toString(),Toast.LENGTH_SHORT).show();
+
+                            // jOBJNEW.put("part_no",part_no);
+                            // matlarraylist.add(new arraymatitem(jOBJNEW));
+                            // Log.e("errror"," "+jOBJNEW);
+                            // Toast.makeText(getApplicationContext(),"res "+jOBJNEW.toString(),Toast.LENGTH_SHORT).show();
+                           materialissueitems.add(materialissueitem1);
+                            Log.e("errror"," "+materialissueitems.size());
 
                         }
-                        String dateofissue = project.getString("created");
-                        object.put("date",dateofissue);
-                        String comm_nr = project.getString("comm_nr");
-                        object.put("comm_nr",comm_nr);
+                    //  materialissueitems.addAll(materialissueitems2);
+
+                        materialitem1=new materialitem(title,""+comm_nr,""+dateofissue,materialissueitems,""+user1);
 
 
-                        //Toast.makeText(getApplicationContext(),"res"+object.toString(),Toast.LENGTH_SHORT).show();
+                        newsfeedList.add(materialitem1);
+                        Log.e("errror"," "+newsfeedList.size());
 
-                        //object.put("name",name);
-
-                        //object.put("mobile",mobile);
-
-                        //Log.e("errror"," "+object);
+                        Log.e("errror"," "+response);
 
                         //tem item = new Item(object);
-
-                        materiallist.add(new materialitem(object));
-                        //       Toast.makeText(getApplicationContext(),"res "+productlists.toString()+" "+productlists.size(),Toast.LENGTH_SHORT).show();
-                     //   Log.e("error"," "+object.toString());
+                        //Toast.makeText(getApplicationContext(),"res "+productlists.toString()+" "+productlists.size(),Toast.LENGTH_SHORT).show();
+                        //Log.e("error"," "+object.toString());
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
                 }
+
+                materiallist.addAll(newsfeedList);
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                 //linearLayoutManager.setReverseLayout(true);
                 //linearLayoutManager.setStackFromEnd(true);
-                recyclerView.setHasFixedSize(true);
+                //recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(linearLayoutManager);
                 adapter = new materialadapter(materiallist, Materialissue.this);
                 recyclerView.setAdapter(adapter);
@@ -286,7 +323,7 @@ public class Materialissue extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                Toast.makeText(getApplicationContext(),"data not fetching"+errorResponse,Toast.LENGTH_SHORT);
+                Toast.makeText(getApplicationContext(),"data not fetching"+errorResponse,Toast.LENGTH_SHORT).show();
             }
         });
 

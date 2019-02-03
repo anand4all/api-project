@@ -76,8 +76,8 @@
        <LinearLayout
            android:layout_below="@+id/layout_editext"
            android:layout_marginTop="7dp"
-           android:layout_marginBottom="40dp"
-           android:layout_width="wrap_content"
+
+           android:layout_width="match_parent"
            android:layout_marginLeft="10dp"
            android:layout_marginRight="10dp"
            android:layout_height="match_parent">
@@ -136,7 +136,7 @@
        </LinearLayout>-->
 
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/save_grn"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
@@ -145,7 +145,7 @@
         android:gravity="center"
         android:text="Save"
         android:textColor="@color/gen_white"
-        android:textSize="20dp" />
+        android:textSize="20dp" /> -->
 
 
 

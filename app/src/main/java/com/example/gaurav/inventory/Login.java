@@ -248,39 +248,7 @@ public class Login extends AppCompatActivity {
 
 
 
-                            /*   File dir = new File(Environment.getExternalStorageDirectory() + "/"+"inventory");
-                                Log.e("MyAccountActivity", "" + Environment.getExternalStorageDirectory() + "/"+"inventory");
-                                if (dir.exists())
-                                    if (dir.isDirectory()) {
-                                        String[] children = dir.list();
-                                        for (int i = 0; i < children.length; i++) {
-                                            new File(dir, children[i]).delete();
-                                        }
-                                        dir.delete();
-                                    }
-                                file = new File(Environment.getExternalStorageDirectory()+"/"+"inventory");
-                                Log.e("directory",""+file.getAbsolutePath());
-                                if (file.mkdir()) {
-                                    sessionManager.setCsrfId(csrf_token);
-                                    sessionManager.setSessionId(session_id);
-                                    sessionManager.setUsername(user.getText().toString());
-                                    Toast.makeText(Login.this, "Dir created", Toast.LENGTH_SHORT).show();
-                                    String fileContents = "csrf_token " + sessionManager.getCsrfId() + " session_id " + sessionManager.getSessionId();
-                                    FileOutputStream outputStream;
-                                    try {
-                                        String path = file.getAbsolutePath() + "/libre.txt";
-                                        outputStream = new FileOutputStream(path);
-                                        outputStream.write(fileContents.getBytes());
-                                        outputStream.close();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }
-                                    Log.e("isExternalStorageWritab", "" + getApplication().getFilesDir().getAbsoluteFile().getPath());
-                                    startActivity(new Intent(Login.this, MainActivity.class));
-                                    finish();
-                                } else {
-                                    Toast.makeText(Login.this, "Dir not created", Toast.LENGTH_SHORT).show();
-                                }*/
+
                             }
                             Log.e("LoginActivity", "  finished");
                         }

@@ -44,8 +44,8 @@ public class Grn_adapter extends RecyclerView.Adapter<Grn_adapter.Holderview>{
             @Override            public void onClick(View view) {
 
 
-                Toast.makeText(context, "click on " + Grnlist.get(position).getPk(),
-                        Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(context, "click on " + Grnlist.get(position).getPk(),
+                //        Toast.LENGTH_SHORT).show();
                 context.startActivity(new Intent(context, Grn_project_details.class).putExtra("projectpk", Grnlist.get(position).getPk()));
 
             }

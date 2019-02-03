@@ -44,7 +44,7 @@ import dmax.dialog.SpotsDialog;
 public class Grn extends AppCompatActivity {
 
 
-    private static String URL_DATA = "http://192.168.0.111:8000/api/support/projects/?format=json";
+  //  private static String URL_DATA = "http://192.168.0.111:8000/api/support/projects/?format=json";
     AsyncHttpClient client;
     public Context mContext;
     RecyclerView listshowgrn;
@@ -188,7 +188,7 @@ public class Grn extends AppCompatActivity {
 
     public void getprojects(){
 
-      Toast.makeText(getApplicationContext(),""+URL_DATA,Toast.LENGTH_SHORT).show();
+   //   Toast.makeText(getApplicationContext(),""+URL_DATA,Toast.LENGTH_SHORT).show();
 
       //  final ProgressDialog progressDialog=new ProgressDialog(this);
      //   progressDialog.setMessage("Loading..");
@@ -210,7 +210,6 @@ public class Grn extends AppCompatActivity {
 
                     try {
                         object = response.getJSONObject(i);
-
                         JSONObject service=object.getJSONObject("service");
                         String name = service.getString("name");
                         String mobile = service.getString("mobile");

@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -105,23 +106,30 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
     String partno,partnobom;
     String description1,Price;
 
-   // int a=0,b=0;
-
-  //  searchh_result_parts searchh_result_parts;
-
-   // Grn grn;
- /*  private static final String[] COUNTRIES = new String[] {
-           "94.1230.174.0","94.3050.222.0", "45251.00.1.00", "20737.01.1.00","94.0203.241.0","94.0208.238.0","94.0319.130.0","20738.10.0.00","26293.00.1.00",
-   };*/
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grn_project_details);
+
+
+
+        Window window = this.getWindow();
+
+// clear FLAG_TRANSLUCENT_STATUS flag:
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+// finally change the color
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.status));
+
+
         listshowgrn_detail = findViewById(R.id.listgrn_pro_detail);
        // txtgrn_result = findViewById(R.id.txt_project_serialno);
-        savegrn = findViewById(R.id.save_grn);
+     //   savegrn = findViewById(R.id.save_grn);
         edittext=findViewById(R.id.autocompleteedit);
         builder = new AlertDialog.Builder(this);
 
@@ -141,7 +149,7 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
         productlists1=new ArrayList<>();
         Bundle bundle = getIntent().getExtras();
         projectpk = bundle.getString("projectpk");
-        Toast.makeText(getApplicationContext(),"projectpk "+projectpk,Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(getApplicationContext(),"projectpk "+projectpk,Toast.LENGTH_SHORT).show();
         getproducts();
 
        // getBOM();
@@ -208,17 +216,17 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
 
 
 
-        savegrn.setOnClickListener(new View.OnClickListener() {
+      /* savegrn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                save();
+             //   save();
                 //   Toast.makeText(getApplicationContext(), "Saved ", Toast.LENGTH_LONG).show();
             }
-        });
+        }); */
     }
 
-    @Override
+  /*  @Override
     public void onBackPressed() {
       //  builder.setMessage("jsdjvsd") .setTitle("sjbasjcb");
 
@@ -248,7 +256,7 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
 
         alert.show();
 
-    }
+    } */
 
     private void askForPermission(String permission, Integer requestCode) {
         if (ContextCompat.checkSelfPermission(Grn_project_details.this, permission) != PackageManager.PERMISSION_GRANTED) {
@@ -263,7 +271,7 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
                 ActivityCompat.requestPermissions(Grn_project_details.this, new String[]{permission}, requestCode);
             }
         } else {
-            Toast.makeText(this, "" + permission + " is already granted.", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "" + permission + " is already granted.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -429,7 +437,11 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
                         });
 
                     }
-                    else if (partno.equals(result)){
+                else if (partno.equals(result)){
+
+                    Toast.makeText(getApplicationContext(),"Product is not added in PO",Toast.LENGTH_SHORT).show();
+                }
+               /*      else if (partno.equals(result)){
 
                     RequestParams params = new RequestParams();
                     params.put("products",productpk);
@@ -457,15 +469,15 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
                         }
                     });
 
-                }
+                } */
                 else{
 
                     Toast.makeText(getApplicationContext(),"Enter valid part no",Toast.LENGTH_SHORT).show();
                 }
 
-
-                dialog.cancel();
                 count=1;
+                dialog.cancel();
+
                 edittext.setText("");
 
             }
@@ -474,6 +486,7 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
         itemsQuantityAddgrn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // count=1;
                 count++;
                 itemquantitygrn.setText(Integer.toString(count));
             }
@@ -486,6 +499,7 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
 
                 }
                 else{
+                  //  count=1;
                     count--;
                 }
                 itemquantitygrn.setText(Integer.toString(count));
@@ -585,7 +599,11 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
                       });
 
                   }
-                  else if (barcode.equals(resultcode)){
+                  else if (barcode.equals(result)){
+
+                      Toast.makeText(getApplicationContext(),"Product is not added in PO",Toast.LENGTH_SHORT).show();
+                  }
+               /*   else if (barcode.equals(resultcode)){
 
                       RequestParams params = new RequestParams();
                       params.put("products",productpk);
@@ -613,7 +631,7 @@ public class Grn_project_details extends AppCompatActivity implements ZXingScann
                           }
                       });
 
-                  }
+                  } */
                   else{
 
                       Toast.makeText(getApplicationContext(),"Enter valid part no",Toast.LENGTH_SHORT).show();

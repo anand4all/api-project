@@ -79,18 +79,16 @@ public class material extends AppCompatActivity {
         List<ParentObject> parentObject = new ArrayList<>();
         for(TitleParent title:titles)
         {
-           childList = new ArrayList<>();
-
+            childList = new ArrayList<>();
             childList.add(new Titlechild(part_no,qty));
             title.setChildObjectList(childList);
             parentObject.add(title);
         }
         return parentObject;
-
     }
 
-    public void getmaterialissue(){
 
+    public void getmaterialissue(){
 
         //  final ProgressDialog progressDialog=new ProgressDialog(this);
         //   progressDialog.setMessage("Loading..");
@@ -123,7 +121,7 @@ public class material extends AppCompatActivity {
                         {
                             JSONObject jOBJNEW = schedule_Array.getJSONObject(j);
 
-                             qty=jOBJNEW.getString("qty");
+                            qty=jOBJNEW.getString("qty");
                             String price=jOBJNEW.getString("price");
 
                             object.put("qty",qty);
@@ -133,7 +131,7 @@ public class material extends AppCompatActivity {
                             part_no=product.getString("part_no");
                             object.put("part_no",part_no);
 
-
+                          //materiallist.add(new materialitem(object));
                           //Toast.makeText(getApplicationContext(),"res "+jOBJNEW.toString(),Toast.LENGTH_SHORT).show();
 
                         }
@@ -141,14 +139,13 @@ public class material extends AppCompatActivity {
                         object.put("date",dateofissue);
                         String comm_nr = project.getString("comm_nr");
                         object.put("comm_nr",comm_nr);
-
                         // Toast.makeText(getApplicationContext(),"res "+object.toString(),Toast.LENGTH_SHORT).show();
                         // object.put("name",name);
                         //object.put("mobile",mobile);
                         Log.e("errror"," "+object);
                         // Item item = new Item(object);
 
-                     //   materiallist.add(new materialitem(object));
+                     // materiallist.add(new materialitem(object));
                         //       Toast.makeText(getApplicationContext(),"res "+productlists.toString()+" "+productlists.size(),Toast.LENGTH_SHORT).show();
                         //   Log.e("error"," "+Grnlists.toString());
 

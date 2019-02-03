@@ -139,8 +139,6 @@ public class Remove_parts extends AppCompatActivity implements ZXingScannerView.
         search_bar_remove.setAdapter(adapter1);
 
 
-
-
      //   getinventory();
         getinventorydata();
         searchfunc();
@@ -184,7 +182,7 @@ public class Remove_parts extends AppCompatActivity implements ZXingScannerView.
                 ActivityCompat.requestPermissions(Remove_parts.this, new String[]{permission}, requestCode);
             }
         } else {
-            Toast.makeText(this, "" + permission + " is already granted.", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this, "" + permission + " is already granted.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -273,6 +271,8 @@ public class Remove_parts extends AppCompatActivity implements ZXingScannerView.
 
             if (resultcode.length() == 0) {
             } else {
+
+                counts++;
                 Toast.makeText(getApplicationContext(), result.getText(), Toast.LENGTH_SHORT).show();
                 // searchedit = search_bar_remove.getText().toString();
                 for (int i = 0; i < inventorylist.size(); i++) {
@@ -307,14 +307,14 @@ public class Remove_parts extends AppCompatActivity implements ZXingScannerView.
 
                 } else {
                     Toast.makeText(Remove_parts.this, "Part no not matched", Toast.LENGTH_SHORT).show();
-                   // counts=0;
+                    counts=0;
 
                 }
 
             }
 
         }
-        counts++;
+
 
         zXingScannerView.resumeCameraPreview(this);
     }
@@ -699,7 +699,7 @@ public class Remove_parts extends AppCompatActivity implements ZXingScannerView.
     }
 
     public void getinventorydata(){
-        Toast.makeText(getApplicationContext(),"data fetching",Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(getApplicationContext(),"data fetching",Toast.LENGTH_SHORT).show();
         client.get(Backendserver.url +"api/support/inventoryData/",new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
